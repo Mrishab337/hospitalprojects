@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}
+home
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center"> Our Doctors</h1>
+<div class="row bg-light">
+    {% for d in doctors %}
+    <div class="card text-center mx-2" style="width: 18rem; ">
+            <img src="{{ d.doc_image.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Dr.{{ d.doc_name }}</h5>
+                <p class="card-text">Dept.{{ d.dep_name }}</p>
+                    <a href="{% url 'booking' %}" class="btn btn-primary">Book now   </a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

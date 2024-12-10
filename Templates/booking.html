@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+home
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-center"> Make your Appointment here </h1>
+    <hr>
+    <div class="container w-50 text-center">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}
